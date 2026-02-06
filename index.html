@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task Manager</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div id="mainBox">
+      <div id="contentBox">
+        <header>Task creation form</header>
+        <br />
+        <br />
+        <main>
+          Subject:-
+          <select name="subjects" id="subjects">
+            <option value="" selected disabled hidden>Select a subject</option>
+            <option value="maths">Maths</option>
+            <option value="science">Science</option>
+            <option value="social">Social Studies</option>
+            <option value="english">English</option>
+          </select>
+          <br />
+          <br />
+          Books:-
+          <select name="books" id="books"></select>
+          <br />
+          <br />
+          Description:-<textarea
+            name="textArea"
+            id="textArea"
+            rows="10"
+            cols="60"
+          ></textarea>
+          <br />
+          <br />
+          Priority Level:-
+          <select name="priorityLevel" id="priorityLevel">
+            <option value="" selected disabled hidden>
+              Select priority level
+            </option>
+            <option value="">Low</option>
+            <option value="">Medium</option>
+            <option value="">High</option>
+          </select>
+          <br />
+          <br />
+          Estimated Time:-
+          <select name="estimatedTime" id="estimatedTime">
+            <option value="" selected disabled hidden>
+              Select estimated time
+            </option>
+            <option value="">0.5 days</option>
+            <option value="">1 days</option>
+            <option value="">1.5 days</option>
+            <option value="">2 days</option>
+            <option value="">2.5 days</option>
+            <option value="">3 days</option>
+          </select>
+        </main>
+        <br />
+        <br />
+        <footer><button type="submit">Submitt</button></footer>
+      </div>
+    </div>
+    <script src="./script.js"></script>
+  </body>
+</html>
