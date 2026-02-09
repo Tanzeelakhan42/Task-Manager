@@ -27,6 +27,12 @@ header {
   left: 400px;
   border-radius: 4px;
 }
+#books {
+  width: 160px;
+}
+#booksRow {
+  display: none;
+}
 button {
   background-color: navy;
   color: white;

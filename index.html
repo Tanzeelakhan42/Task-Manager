@@ -14,17 +14,26 @@
         <br />
         <main>
           Subject:-
-          <select name="subjects" id="subjects">
+          <select name="subject-dropdown" id="subject-dropdown">
             <option value="" selected disabled hidden>Select a subject</option>
-            <option value="maths">Maths</option>
-            <option value="science">Science</option>
-            <option value="social">Social Studies</option>
-            <option value="english">English</option>
+            <option value="computerScience" id="subjectComputerScience">
+              Computer Science
+            </option>
+            <option value="maths" id="subjectMaths">Maths</option>
+            <option value="science" id="subjectScience">Science</option>
+            <option value="socialScience" id="subjectSocialScience">
+              Social Science
+            </option>
+            <option value="english" id="subjectEnglish">English</option>
           </select>
           <br />
           <br />
-          Books:-
-          <select name="books" id="books"></select>
+          <div id="booksRow">
+            Books:-
+            <select name="books" id="books">
+              <option value="" selected disabled hidden>Select Books</option>
+            </select>
+          </div>
           <br />
           <br />
           Description:-<textarea
