@@ -33,6 +33,9 @@ header {
 #booksRow {
   display: none;
 }
+#loadingText {
+  margin-left: 10px;
+}
 button {
   background-color: navy;
   color: white;

@@ -7,10 +7,17 @@ const URL5 = "https://openlibrary.org/search.json?subject=english";
 const booksRow = document.querySelector("#booksRow");
 const subjectDropdown = document.querySelector("#subject-dropdown");
 const books = document.querySelector("#books");
+const loadingText = document.querySelector("#loadingText");
+const submittBtn = document.querySelector("#submittBtn");
+const studyForm = document.querySelector("#studyForm");
 
-const clearBooks = () => {};
+const clearBooks = () => {
+  books.innerHTML =
+    '<option value=""selected disabled hidden> Select a book</option>';
+};
 subjectDropdown.addEventListener("change", (e) => {
   booksRow.style.display = "block";
+  clearBooks();
   let subjectName = e.target.value;
   console.log(subjectName);
 
@@ -28,6 +35,7 @@ subjectDropdown.addEventListener("change", (e) => {
 });
 
 const getData1 = async () => {
+  loadingText.style.display = "inline";
   let response = await fetch(URL1);
   console.log(response);
   let data = await response.json();
@@ -39,8 +47,10 @@ const getData1 = async () => {
     bookOptions.textContent = doc.title;
     books.appendChild(bookOptions);
   }
+  loadingText.style.display = "none";
 };
 const getData2 = async () => {
+  loadingText.style.display = "inline";
   let response = await fetch(URL2);
   console.log(response);
   let data = await response.json();
@@ -52,8 +62,10 @@ const getData2 = async () => {
     bookOptions.textContent = doc.title;
     books.appendChild(bookOptions);
   }
+  loadingText.style.display = "none";
 };
 const getData3 = async () => {
+  loadingText.style.display = "inline";
   let response = await fetch(URL3);
   console.log(response);
   let data = await response.json();
@@ -65,8 +77,10 @@ const getData3 = async () => {
     bookOptions.textContent = doc.title;
     books.appendChild(bookOptions);
   }
+  loadingText.style.display = "none";
 };
 const getData4 = async () => {
+  loadingText.style.display = "inline";
   let response = await fetch(URL4);
   console.log(response);
   let data = await response.json();
@@ -78,8 +92,10 @@ const getData4 = async () => {
     bookOptions.textContent = doc.title;
     books.appendChild(bookOptions);
   }
+  loadingText.style.display = "none";
 };
 const getData5 = async () => {
+  loadingText.style.display = "inline";
   let response = await fetch(URL5);
   console.log(response);
   let data = await response.json();
@@ -91,4 +107,18 @@ const getData5 = async () => {
     bookOptions.textContent = doc.title;
     books.appendChild(bookOptions);
   }
+  loadingText.style.display = "none";
 };
+studyForm.addEventListener("submit", (e) => {
+  e.preventDefault();
+  let dataFromForm = new FormData(studyForm);
+  const data = {
+    Subjects: dataFromForm.get("subject-dropdown"),
+    Books: dataFromForm.get("books"),
+    Description: dataFromForm.get("textArea"),
+    PriorityLevel: dataFromForm.get("priorityLevel"),
+    EstimatedTime: dataFromForm.get("estimatedTime"),
+  };
+  console.log("User submitted data:", data);
+  alert("Form submitted successfully");
+});

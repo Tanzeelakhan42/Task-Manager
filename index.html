@@ -7,72 +7,79 @@
     <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
-    <div id="mainBox">
-      <div id="contentBox">
-        <header>Task creation form</header>
-        <br />
-        <br />
-        <main>
-          Subject:-
-          <select name="subject-dropdown" id="subject-dropdown">
-            <option value="" selected disabled hidden>Select a subject</option>
-            <option value="computerScience" id="subjectComputerScience">
-              Computer Science
-            </option>
-            <option value="maths" id="subjectMaths">Maths</option>
-            <option value="science" id="subjectScience">Science</option>
-            <option value="socialScience" id="subjectSocialScience">
-              Social Science
-            </option>
-            <option value="english" id="subjectEnglish">English</option>
-          </select>
+    <form id="studyForm">
+      <div id="mainBox">
+        <div id="contentBox">
+          <header>Task creation form</header>
           <br />
           <br />
-          <div id="booksRow">
-            Books:-
-            <select name="books" id="books">
-              <option value="" selected disabled hidden>Select Books</option>
+          <main>
+            Subject:-
+            <select name="subject-dropdown" id="subject-dropdown">
+              <option value="" selected disabled hidden>
+                Select a subject
+              </option>
+              <option value="computerScience" id="subjectComputerScience">
+                Computer Science
+              </option>
+              <option value="maths" id="subjectMaths">Maths</option>
+              <option value="science" id="subjectScience">Science</option>
+              <option value="socialScience" id="subjectSocialScience">
+                Social Science
+              </option>
+              <option value="english" id="subjectEnglish">English</option>
             </select>
-          </div>
+            <span id="loadingText" style="display: none">Fetching........</span>
+            <br />
+            <br />
+            <div id="booksRow">
+              Books:-
+              <select name="books" id="books">
+                <option value="" selected disabled hidden>Select Books</option>
+              </select>
+            </div>
+            <br />
+            <br />
+            Description:-<textarea
+              name="textArea"
+              id="textArea"
+              rows="10"
+              cols="60"
+            ></textarea>
+            <br />
+            <br />
+            Priority Level:-
+            <select name="priorityLevel" id="priorityLevel">
+              <option value="" selected disabled hidden>
+                Select priority level
+              </option>
+              <option value="Low">Low</option>
+              <option value="Medium">Medium</option>
+              <option value="High">High</option>
+            </select>
+            <br />
+            <br />
+            Estimated Time (in days):-
+            <select name="estimatedTime" id="estimatedTime">
+              <option value="" selected disabled hidden>
+                Select estimated time
+              </option>
+              <option value="0.5 Days">0.5 days</option>
+              <option value="1 Day">1 days</option>
+              <option value="1.5 Days">1.5 days</option>
+              <option value="2 Days">2 days</option>
+              <option value="2.5 Days">2.5 days</option>
+              <option value="3 Days">3 days</option>
+            </select>
+          </main>
           <br />
           <br />
-          Description:-<textarea
-            name="textArea"
-            id="textArea"
-            rows="10"
-            cols="60"
-          ></textarea>
-          <br />
-          <br />
-          Priority Level:-
-          <select name="priorityLevel" id="priorityLevel">
-            <option value="" selected disabled hidden>
-              Select priority level
-            </option>
-            <option value="">Low</option>
-            <option value="">Medium</option>
-            <option value="">High</option>
-          </select>
-          <br />
-          <br />
-          Estimated Time:-
-          <select name="estimatedTime" id="estimatedTime">
-            <option value="" selected disabled hidden>
-              Select estimated time
-            </option>
-            <option value="">0.5 days</option>
-            <option value="">1 days</option>
-            <option value="">1.5 days</option>
-            <option value="">2 days</option>
-            <option value="">2.5 days</option>
-            <option value="">3 days</option>
-          </select>
-        </main>
-        <br />
-        <br />
-        <footer><button type="submit">Submitt</button></footer>
+          <footer>
+            <button type="submit" id="submittBtn">Submitt</button>
+          </footer>
+        </div>
       </div>
-    </div>
+    </form>
     <script src="./script.js"></script>
   </body>
 </html>
